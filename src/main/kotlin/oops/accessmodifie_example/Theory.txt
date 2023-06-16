@@ -1,0 +1,5 @@
+Access Modifiers in Kotlin
+    public: everywhere visible
+    private: only within class
+    protected: same as private but also in child class
+    internal: everywhere within same module (module: set of kotlin files compiled togather. Eg. some project)

@@ -6,6 +6,10 @@ import kotlin.collections.ArrayList
 fun main(){
     println("hello world!!!!!!")
 
+    var a = 10
+    val b = 11
+    addTwoNums(a,b)
+
 
     // Syntax of if-else
     /*
@@ -72,24 +76,11 @@ fun main(){
 
 
 
-
-
-
-
-    var arrOddList:ArrayList<Int> = arrayListOf(1,3,5,7,9)
-    println(arrOddList)
-    var arr:Array<Int> = arrayOf(34,23,123,3)
-    arrOddList.forEach {
-        println(it)
-        var ans = addTwoNums(1,3,4)
-        print(ans)
-    }
-
-
 }
 // Syntax of normal function
 fun addTwoNums(a:Int, b:Int):Int{
     return a+b
 }
 
+// another shorter syntax of function
 fun addTwoNums(a:Int, b:Int,c:Int)= (a+b)
