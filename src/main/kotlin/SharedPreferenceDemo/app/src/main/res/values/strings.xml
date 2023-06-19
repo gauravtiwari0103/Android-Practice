@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SharedPreferenceDemo</string>
+    <string name="SignInPageTitle">SignIn\n</string>
+    <string name="checkboxtext">Keep me logged in</string>
+    <string name="etpasswordhint">Password</string>
+    <string name="btLoginText">Login</string>
+    <string name="etEmailText">Email</string>
+</resources>
