@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test"
+    app:startDestination="@id/registerFragment2">
+
+    <fragment
+        android:id="@+id/registerFragment2"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_fragmentone"
+            app:destination="@id/fragmentone" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentone"
+        android:name="com.example.myapplication.week2.learingfragments.fragmentone"
+        android:label="fragment_fragmentone"
+        tools:layout="@layout/fragment_fragmentone" >
+        <action
+            android:id="@+id/action_fragmentone_to_editNotesFragment2"
+            app:destination="@id/editNotesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNotesFragment2"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.EditNotesFragment"
+        android:label="fragment_edit_notes"
+        tools:layout="@layout/fragment_edit_notes" />
+</navigation>

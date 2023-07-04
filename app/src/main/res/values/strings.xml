@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">30 Days Android</string>
+    <string name="SignInPageTitle">SignIn\n</string>
+    <string name="checkboxtext">Keep me logged in</string>
+    <string name="etpasswordhint">Password</string>
+    <string name="btLoginText">Login</string>
+    <string name="etEmailText">Email</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_one">Fragment One</string>
+</resources>

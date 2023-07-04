@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/registerFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="noUserNameGot" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_editNotesFragment"
+            app:destination="@id/editNotesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNotesFragment"
+        android:name="com.example.myapplication.week2.learning_navigation_controller.EditNotesFragment"
+        android:label="fragment_edit_notes"
+        tools:layout="@layout/fragment_edit_notes" />
+</navigation>
