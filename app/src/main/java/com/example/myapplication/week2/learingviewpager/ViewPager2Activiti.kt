@@ -26,11 +26,7 @@ class ViewPager2Activiti : AppCompatActivity() {
         )
         viewPager2.adapter = ViewPager2Adapter(list)
         viewPager2.orientation = ViewPager2.ORIENTATION_VERTICAL
-        viewPager2.setOnClickListener {
-            viewPager2.beginFakeDrag()
-            viewPager2.fakeDragBy(-19f)
-            viewPager2.endFakeDrag()
-        }
+
 
 
     }

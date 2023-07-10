@@ -48,5 +48,22 @@
         android:layout_height="wrap_content"
         android:text="Volley Demo: Github list users"/>
 
+    <Button
+        android:id="@+id/btnChoiceIndianaPacersUi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Indiana Pacers"/>
+
+    <Button
+        android:id="@+id/btnChoiceBroadCastRecieverDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BroadCast Reciver Demo"/>
+
+    <Button
+        android:id="@+id/btnChoiceContentProviderDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Content Provider Demo"/>
 
 </LinearLayout>

@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="detailspagetitle">#404040</color>
+    <color name="indiana_pacers_background_dark">#01152D</color>
+    <color name="indiana_pacers_background">#011E41</color>
+    <color name="indiana_pacers_yellow">#FFB71B</color>
 </resources>

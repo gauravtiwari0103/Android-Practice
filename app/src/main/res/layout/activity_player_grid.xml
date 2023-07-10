@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/indiana_pacers_background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".week3.indiana_pacers_ui.PlayerGrid">
+
+    <include
+        layout="@layout/pacers_appbar"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/pacers_playerGrid_rv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginHorizontal="10dp"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+    <GridView
+        android:id="@+id/pacers_playerGrid_gv"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="19dp"
+        android:verticalSpacing="19dp"
+        android:gravity="center_horizontal"/>
+
+</LinearLayout>

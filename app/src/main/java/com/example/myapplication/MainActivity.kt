@@ -11,6 +11,9 @@ import com.example.myapplication.week2.learingviewpager.ViewPager2Activiti
 import com.example.myapplication.week2.learningRetroFit.NewsActivity
 import com.example.myapplication.week2.learning_navigation_controller.NaviagtionActivity
 import com.example.myapplication.week2.volleyimplementation.VolleyActivity
+import com.example.myapplication.week3.broadcastRecivers.BroadcastReciverDemo
+import com.example.myapplication.week3.contentProviderDemo.ContentProviderDemo
+import com.example.myapplication.week3.indiana_pacers_ui.Login
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnChoiceSharedPreference:Button
@@ -20,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnChoiceRetrofitDemo: Button
     private lateinit var btnChoiceRetrofitDemo2:Button
     private lateinit var btnChoiceVolleyDemo: Button
+    private lateinit var btnChoiceIndianaPacersUI: Button
+    private lateinit var btnChoiceBroadCastRecieverDemo: Button
+    private lateinit var btnChoiceContentProviderDemo: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -50,6 +56,16 @@ class MainActivity : AppCompatActivity() {
         btnChoiceVolleyDemo.setOnClickListener {
             startActivity(Intent(this@MainActivity, VolleyActivity::class.java))
         }
+        btnChoiceIndianaPacersUI.setOnClickListener {
+            startActivity(Intent(this@MainActivity, Login::class.java))
+        }
+        btnChoiceBroadCastRecieverDemo.setOnClickListener {
+            startActivity(Intent(this@MainActivity, BroadcastReciverDemo::class.java))
+        }
+        btnChoiceContentProviderDemo.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ContentProviderDemo::class.java))
+        }
+
 
     }
 
@@ -61,5 +77,8 @@ class MainActivity : AppCompatActivity() {
         btnChoiceRetrofitDemo = findViewById(R.id.btnChoiceRetrofitDemo)
         btnChoiceRetrofitDemo2= findViewById(R.id.btnChoiceRetrofitDemo2)
         btnChoiceVolleyDemo = findViewById(R.id.btnChoiceVolleyDemo)
+        btnChoiceIndianaPacersUI = findViewById(R.id.btnChoiceIndianaPacersUi)
+        btnChoiceBroadCastRecieverDemo = findViewById(R.id.btnChoiceBroadCastRecieverDemo)
+        btnChoiceContentProviderDemo = findViewById(R.id.btnChoiceContentProviderDemo)
     }
 }
