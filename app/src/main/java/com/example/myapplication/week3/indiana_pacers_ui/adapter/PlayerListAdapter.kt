@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.week3.indiana_pacers_ui.PlayerStats
 import com.example.myapplication.week3.indiana_pacers_ui.data.Player
+import com.example.myapplication.week3.indiana_pacers_ui.data.player_models.Players
 
 
-class PlayerListAdapter(private val context: Context, private val dataSet: ArrayList<Player>) :
+class PlayerListAdapter(private val context: Context, private val dataSet: ArrayList<Players>) :
     RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() {
 
 
@@ -47,10 +49,12 @@ class PlayerListAdapter(private val context: Context, private val dataSet: Array
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.playername.text = dataSet[position].name
-        viewHolder.playerPosition.text = dataSet[position].position
-        viewHolder.playerNo.text = dataSet[position].no
-        viewHolder.playerImg.setImageResource(dataSet[position].img)
+        val player = dataSet[position]
+        viewHolder.playername.text = "${player.fn} ${player.ln}"
+        viewHolder.playerPosition.text = player.posFull
+        viewHolder.playerNo.text = player.jerseyNum
+
+        Glide.with(context).load(player.headshotImageUrl).placeholder(R.drawable.dummy_player_list).into(viewHolder.playerImg)
     }
 
 

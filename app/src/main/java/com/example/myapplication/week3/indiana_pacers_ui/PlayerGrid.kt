@@ -9,6 +9,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.week3.indiana_pacers_ui.adapter.PlayerGridAdapter
+import com.example.myapplication.week3.indiana_pacers_ui.adapter.PlayerListAdapter
+import com.example.myapplication.week3.indiana_pacers_ui.data.player_models.Players
+import com.example.myapplication.week3.indiana_pacers_ui.interfaces.DfeApiService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.awaitResponse
 
 class PlayerGrid : AppCompatActivity() {
     private lateinit var tvTitle:TextView
@@ -25,7 +33,16 @@ class PlayerGrid : AppCompatActivity() {
         }
         tvTitle.text= "Roaster"
 
-        gv.adapter = PlayerGridAdapter(this, ListOfPlayers.listOfPlayer)
+        GlobalScope.launch {
+            val response = DfeApiService.apiInstance.getPlayers().awaitResponse()
+            if(response.isSuccessful){
+                var list :ArrayList<Players> = response!!.body()!!.data!!.players!!
+                withContext(Dispatchers.Main){
+                    gv.adapter = PlayerGridAdapter(this@PlayerGrid, list)
+                }
+
+            }
+        }
 
     }
 

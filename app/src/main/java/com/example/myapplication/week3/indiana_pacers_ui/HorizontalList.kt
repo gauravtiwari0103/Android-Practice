@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.week3.indiana_pacers_ui.adapter.PlayerHorizontalAdapter
+import com.example.myapplication.week3.indiana_pacers_ui.interfaces.DfeApiService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.awaitResponse
 
 class HorizontalList : AppCompatActivity() {
     private lateinit var tvTitle : TextView
@@ -18,10 +24,21 @@ class HorizontalList : AppCompatActivity() {
         setContentView(R.layout.activity_horizontal_list)
         initView()
         tvTitle.text = "Roaster"
-        rv.adapter = PlayerHorizontalAdapter(this, ListOfPlayers.listOfPlayer)
+        doNewtowrkCall()
+//        rv.adapter = PlayerHorizontalAdapter(this, ListOfPlayers.listOfPlayer)
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         iv_backButton.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
+        }
+    }
+
+    private fun doNewtowrkCall() {
+        lifecycleScope.launch {
+            val response = DfeApiService.apiInstance.getPlayers().awaitResponse()
+            val list = response.body()!!.data!!.players
+            withContext(Dispatchers.Main){
+                rv.adapter = PlayerHorizontalAdapter(this@HorizontalList, list)
+            }
         }
     }
 

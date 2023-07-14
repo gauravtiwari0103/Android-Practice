@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <Button
@@ -65,5 +66,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Content Provider Demo"/>
+
+    <Button
+        android:id="@+id/btnChoiceCoroutinesDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coroutines Demo"/>
+
+    <Button
+        android:id="@+id/btnChoiceFlowsDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flows Demo"/>
+
+    <Button
+        android:id="@+id/btnChoiceLiveDataDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Livedata Demo"/>
+
 
 </LinearLayout>

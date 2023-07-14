@@ -19,8 +19,19 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".week3.contentProviderDemo.ContentProviderDemo"
+            android:name=".week4.livedata_and_viewmodel.LiveDataViewModel"
             android:exported="false" />
+        <activity
+            android:name=".week4.flows.StopwatchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplicationNoActionBar" />
+        <activity
+            android:name=".week4.coroutines.CoroutinesDemo"
+            android:exported="false" />
+        <activity
+            android:name=".week3.contentProviderDemo.ContentProviderDemo"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplicationNoActionBar" />
 
         <receiver
             android:name=".week3.broadcastRecivers.MyBroadCastReceiver"

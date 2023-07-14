@@ -10,10 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.week3.indiana_pacers_ui.data.Player
+import com.example.myapplication.week3.indiana_pacers_ui.data.player_models.Players
 
-class PlayerHorizontalAdapter(private val context: Context, private val playerList: ArrayList<Player>) :
+class PlayerHorizontalAdapter(private val context: Context, private val playerList: ArrayList<Players>) :
     RecyclerView.Adapter<PlayerHorizontalAdapter.ViewHolder>() {
 
     private var prevSelection = -1
@@ -25,9 +27,12 @@ class PlayerHorizontalAdapter(private val context: Context, private val playerLi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val player = playerList[position]
-
-        holder.playerName.text = player.name
-        holder.playerImage.setImageResource(player.img)
+        var nameToShow = "${player.fn} ${player.ln}"
+        if (nameToShow.length>16){
+            nameToShow = "${player.fn} ${player.ln!!.get(0)}"
+        }
+        holder.playerName.text = nameToShow
+        Glide.with(context).load(player.headshotImageUrl).placeholder(R.drawable.dummy_player_list).into(holder.playerImage)
 
         if (player.isSelected) {
             holder.card.layoutParams.height = (92 * Resources.getSystem().displayMetrics.density).toInt()

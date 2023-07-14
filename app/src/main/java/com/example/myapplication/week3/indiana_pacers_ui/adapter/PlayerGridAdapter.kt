@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.week3.indiana_pacers_ui.PlayerStats
 import com.example.myapplication.week3.indiana_pacers_ui.data.Player
+import com.example.myapplication.week3.indiana_pacers_ui.data.player_models.Players
 
-class PlayerGridAdapter(private val context: Context, private val playerList: ArrayList<Player>) : BaseAdapter() {
+class PlayerGridAdapter(private val context: Context, private val playerList: ArrayList<Players>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return playerList.size
@@ -45,10 +47,15 @@ class PlayerGridAdapter(private val context: Context, private val playerList: Ar
         }
 
         val player = playerList[position]
-        viewHolder.playerImage.setImageResource(player.img)
-        viewHolder.playerName.text = player.name
-        viewHolder.playerNumber.text = player.no
-        viewHolder.playerPosition.text = player.position
+//        viewHolder.playerImage.setImageResource(player.img)
+        Glide.with(context).load(player.headshotImageUrl).placeholder(R.drawable.dummy_player_list).into(viewHolder.playerImage)
+        var nameToShow = "${player.fn} ${player.ln}"
+        if (nameToShow.length > 14){
+            nameToShow = "${player.fn} ${player.ln!!.get(0)}"
+        }
+        viewHolder.playerName.text = nameToShow
+        viewHolder.playerNumber.text = player.jerseyNum
+        viewHolder.playerPosition.text = player.posFull
         view.setOnClickListener {
             context.startActivity(Intent(context, PlayerStats::class.java))
         }
